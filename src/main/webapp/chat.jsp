@@ -27,12 +27,13 @@ Time is: <%=date%>
 
     for (Cookie c : request.getCookies()) {
         if (c.getName().equals("name")) {
-            user = c.getValue();
+            out.println(c.getValue());
         }
     }
 
+
     for (Message m : messageList) {
-        out.println(user + " : " + m.getMessage());
+        out.println(m.getUser() + " : " + m.getMessage());
     }
 %>
 </textarea>

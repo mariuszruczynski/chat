@@ -4,6 +4,7 @@ import store.MessageStore;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,9 +17,16 @@ public class Servlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
+        String user = "";
         String say = request.getParameter("iSay");
 
-        MessageStore.messages.add(new Message(say));
+        for (Cookie c : request.getCookies()) {
+            if (c.getName().equals("name")) {
+                user = c.getValue();
+            }
+        }
+
+        MessageStore.messages.add(new Message(say, user));
         out.println(" <br><h1>you say:" + say + "</h1>");
         response.sendRedirect("chat.jsp");
     }
