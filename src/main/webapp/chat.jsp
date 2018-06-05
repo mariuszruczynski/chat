@@ -34,7 +34,6 @@ Time is: <%=date%>
     for (Message m : messageList) {
         out.println(user + " : " + m.getMessage());
     }
-    user ="";
 %>
 </textarea>
         <br/>
