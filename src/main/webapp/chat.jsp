@@ -42,5 +42,12 @@ Time is: <%=date%>
         <input type="submit" name="do_it" value="Talk/Refresh"/>
     </p>
 </form>
+
+
+<br>
+<br>
+
+
+<a href="talk.jsp">sprawdz rozmowe</a>
 </body>
 </html>

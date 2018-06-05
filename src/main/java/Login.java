@@ -18,19 +18,7 @@ public class Login extends HttpServlet {
 
     List<User> users = new ArrayList<>();
     private String user;
-    private String password;
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -39,18 +27,12 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-
         user = request.getParameter("Name");
-
 
         Cookie userCook = new Cookie("name", user);
         response.addCookie(userCook);
 
-
-
-//        UserStore.users.add(new User(user));
-//
-  response.sendRedirect("chat.jsp");
+        response.sendRedirect("chat.jsp");
 
     }
 
