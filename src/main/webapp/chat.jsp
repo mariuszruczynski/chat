@@ -12,25 +12,25 @@
 
 <html>
 <body>
+
+<meta http-equiv="refresh" content="5">
+
 <p><% java.util.Date date = new java.util.Date();%><br></p>
 Time is: <%=date%>
-
-
+<br>
+<b><%
+    for (Cookie c : request.getCookies()) {
+        if (c.getName().equals("name")) {
+            out.println("User: " + c.getValue());
+        }
+    }
+%></b>
 <form action="servlet" method="post">
     <p>
         <textarea name="chat" rows="13" cols="60">
 <%
-    String user = "";
     List<Message> messageList;
     messageList = MessageStore.messages;
-
-
-    for (Cookie c : request.getCookies()) {
-        if (c.getName().equals("name")) {
-            out.println(c.getValue());
-        }
-    }
-
 
     for (Message m : messageList) {
         out.println(m.getUser() + " : " + m.getMessage());

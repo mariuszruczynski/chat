@@ -27,7 +27,7 @@
     messageList = MessageStore.messages;
 
     for (Message m : messageList) {
-        out.println(" : " + m.getMessage() + "<br>");
+        out.println(m.getUser() + " : " + m.getMessage() + "<br>");
     }
 %>
 

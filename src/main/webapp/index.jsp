@@ -2,7 +2,8 @@
 
 <html>
 <body>
-<h1><center>HELLO  !!!!</center></h1>
+<center>
+<h1>HELLO  !!!!</h1>
 
 
 <form action="login" method="post">
@@ -12,5 +13,7 @@
         <input type="submit" name="do_it" value="Submit"/>
     </p>
 </form>
+
+</center>
 </body>
 </html>
