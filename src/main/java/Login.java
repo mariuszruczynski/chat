@@ -29,12 +29,11 @@ public class Login extends HttpServlet {
 
         user = request.getParameter("Name");
 
-        Cookie userCook = new Cookie("name", user);
+
+        Cookie userCook = new Cookie("name", user.replace(" ", "_"));
         response.addCookie(userCook);
 
         response.sendRedirect("chat.jsp");
 
     }
-
-
 }

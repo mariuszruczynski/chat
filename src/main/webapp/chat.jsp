@@ -13,21 +13,21 @@
 <html>
 <body>
 
-<meta http-equiv="refresh" content="5">
+<meta http-equiv="refresh" content="10">
 
 <p><% java.util.Date date = new java.util.Date();%><br></p>
-Time is: <%=date%>
+Time is: <%=new Date().getHours()+":" + new Date().getMinutes()%>
 <br>
-<b><%
+<b1><%
     for (Cookie c : request.getCookies()) {
         if (c.getName().equals("name")) {
             out.println("User: " + c.getValue());
         }
     }
-%></b>
+%></b1>
 <form action="servlet" method="post">
     <p>
-        <textarea name="chat" rows="13" cols="60">
+        <textarea name="chat" rows="20" cols="68">
 <%
     List<Message> messageList;
     messageList = MessageStore.messages;
@@ -44,10 +44,8 @@ Time is: <%=date%>
     </p>
 </form>
 
-
 <br>
 <br>
-
 
 <a href="talk.jsp">sprawdz rozmowe</a>
 </body>

@@ -1,10 +1,14 @@
 package store;
 
 import javax.xml.registry.infomodel.User;
+import java.util.Date;
 
 public class Message {
     String message;
     String user;
+    Date date;
+
+
 
     public Message(String message, String user) {
         this.message = message;

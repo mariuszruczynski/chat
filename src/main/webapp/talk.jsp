@@ -19,10 +19,7 @@
 
 <html>
 <body>
-
-
 <%
-
     List<Message> messageList;
     messageList = MessageStore.messages;
 
